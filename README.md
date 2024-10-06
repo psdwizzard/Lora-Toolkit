@@ -22,6 +22,9 @@
 - Compile all your training tags into a single CSV file.
 - Facilitates data analysis and sharing.
 
+### New Feature: Subfolder Support
+- All tools now support processing of files in subfolders, allowing for more organized dataset structures.
+
 ## Installation
 
 Follow these steps to set up the application on your local machine.
@@ -33,7 +36,7 @@ Follow these steps to set up the application on your local machine.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/lora-toolkit.git
+git clone https://github.com/psdwizzard/Lora-Toolkit.git
 cd lora-toolkit
 ```
 
@@ -42,10 +45,10 @@ cd lora-toolkit
 Install the necessary Python libraries using pip:
 
 ```bash
-pip install tkinter pillow
+pip install customtkinter pillow
 ```
 
-- **tkinter**: For the graphical user interface (usually included with Python).
+- **customtkinter**: For an enhanced, custom-styled graphical user interface.
 - **pillow**: For image processing in the Site Builder.
 
 ## Usage
@@ -55,14 +58,16 @@ pip install tkinter pillow
 Run the Python script to start the Lora Toolkit:
 
 ```bash
-python lora_toolkit.pyw
+python lora_toolkit.py
 ```
 
+*Note: Replace `lora_toolkit.py` with the actual filename if it's different.*
 
 ### Navigating the Interface
 
 - Upon launching, you'll see a dropdown menu at the top.
 - Select the desired tool from the dropdown to switch between applications.
+- The interface now uses CustomTkinter for an improved user experience.
 
 ### Site Builder
 
@@ -71,6 +76,7 @@ python lora_toolkit.pyw
 Steps:
 1. **Select Image and Text Files Folder**:
    - Click the **Browse** button to choose the directory containing your images and corresponding `.txt` files.
+   - The tool will now process files in the selected directory and all its subfolders.
    - Each image should have an accompanying `.txt` file with the same name (e.g., `image1.png` and `image1.txt`).
 2. **Enter Project Name**:
    - Provide a name for your project. This will be used as the title of the website and the main HTML file (e.g., `MyProject.html`).
@@ -88,11 +94,12 @@ Steps:
 Steps:
 1. **Select Directory**:
    - Click **Browse** to choose the folder containing your `.txt` files (tags).
+   - The tool will process all `.txt` files in the selected directory and its subfolders.
 2. **Enter Text to Remove**:
    - Input the word or phrase you want to remove from all tags.
 3. **Execute**:
    - Click **Go Burr** to start the cleaning process.
-   - The specified text will be removed from all `.txt` files in the directory.
+   - The specified text will be removed from all `.txt` files in the directory and its subfolders.
 
 ### Add Trigger Word
 
@@ -101,11 +108,12 @@ Steps:
 Steps:
 1. **Select Directory**:
    - Click **Browse** to choose the folder containing your `.txt` files (tags).
+   - The tool will process all `.txt` files in the selected directory and its subfolders.
 2. **Enter Text to Add**:
    - Input the word or phrase you want to prepend to all tags.
 3. **Execute**:
    - Click **Go Burr** to start the process.
-   - The specified text will be added to the front of each `.txt` file's content.
+   - The specified text will be added to the front of each `.txt` file's content in the directory and its subfolders.
 
 ### Prompts to CSV
 
@@ -114,8 +122,9 @@ Steps:
 Steps:
 1. **Select Directory**:
    - Click **Browse** to choose the folder containing your `.txt` files (tags).
+   - The tool will process all `.txt` files in the selected directory and its subfolders.
 2. **Enter CSV File Name**:
    - Provide a name for the output CSV file (e.g., `training_tags.csv`).
 3. **Generate CSV**:
    - Click **Go Burr** to create the CSV file.
-   - The CSV will contain two columns: `File Name` and `Content`.
+   - The CSV will contain two columns: `File Name` and `Content`, including data from all processed subfolders.
